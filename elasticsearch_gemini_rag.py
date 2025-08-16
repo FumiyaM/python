@@ -94,7 +94,7 @@ class ElasticSearchRAG:
                 
             return es
         except Exception as e:
-            self.logger.error(f"Failed to connect to ElasticSearch: {e}")
+            self.logger.error("Failed to connect to ElasticSearch. Please check your connection settings.")
             raise
     
     def _init_gemini(self, api_key: str):
