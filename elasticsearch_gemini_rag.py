@@ -74,7 +74,8 @@ class ElasticSearchRAG:
             # Build connection URL
             if username and password:
                 es = Elasticsearch(
-                    [f"http://{username}:{password}@{host}:{port}"],
+                    [f"http://{host}:{port}"],
+                    http_auth=(username, password),
                     http_compress=True,
                     request_timeout=30
                 )
