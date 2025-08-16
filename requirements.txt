@@ -1,0 +1,14 @@
+# ElasticSearch + Gemini RAG Requirements
+
+# Core dependencies
+elasticsearch>=8.0.0
+google-generativeai>=0.3.0
+python-dotenv>=1.0.0
+
+# Optional dependencies for enhanced functionality
+requests>=2.31.0
+urllib3>=1.26.0
+
+# Development and testing (optional)
+pytest>=7.0.0
+pytest-cov>=4.0.0
