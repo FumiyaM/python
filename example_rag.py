@@ -245,7 +245,24 @@ def main():
             print("Skipping full RAG examples.")
     except KeyboardInterrupt:
         print("\nExample script interrupted.")
-    
+
+    run_full_rag = False
+    if args.run_full_rag:
+        run_full_rag = True
+    elif sys.stdin.isatty():
+        try:
+            user_input = input("\nRun full RAG examples? (y/N): ").strip().lower()
+            if user_input in ['y', 'yes']:
+                run_full_rag = True
+            else:
+                print("Skipping full RAG examples.")
+        except KeyboardInterrupt:
+            print("\nExample script interrupted.")
+    else:
+        print("Non-interactive environment detected. Skipping full RAG examples. Use --run-full-rag to force.")
+
+    if run_full_rag:
+        example.run_example_queries()
     print("\nExample script completed!")
 
 if __name__ == "__main__":
